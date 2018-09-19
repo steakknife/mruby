@@ -23,7 +23,8 @@ MRuby::Build.new do |conf|
   # conf.gem :git => 'git@github.com:iij/mruby-io.git', :branch => 'master', :options => '-v'
 
   # include the default GEMs
-  conf.gembox 'default'
+  # conf.gembox 'default'
+  conf.gembox 'full-core'
   # C compiler settings
   # conf.cc do |cc|
   #   cc.command = ENV['CC'] || 'gcc'
@@ -98,7 +99,8 @@ MRuby::Build.new('host-debug') do |conf|
   enable_debug
 
   # include the default GEMs
-  conf.gembox 'default'
+  # conf.gembox 'default'
+  conf.gembox 'full-core'
 
   # C compiler settings
   conf.cc.defines = %w(MRB_ENABLE_DEBUG_HOOK)
@@ -122,7 +124,8 @@ MRuby::Build.new('test') do |conf|
   conf.enable_bintest
   conf.enable_test
 
-  conf.gembox 'default'
+  # conf.gembox 'default'
+  conf.gembox 'full-core'
 end
 
 #MRuby::Build.new('bench') do |conf|
